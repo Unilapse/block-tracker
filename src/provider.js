@@ -28,7 +28,7 @@ const chainEndpointMap = {
   polygon: {
     endPoint: NETWORK === 'test' ? `wss://polygon-mumbai.g.alchemy.com/v2/${process.env.ZSH_POLYGON_API_KEY}` : 'wss://',
     marketContractAddress: NETWORK === 'test' ? '0x11f46E8C1E2Ac861e662A62080ED6dC63041Ff94' : '0x',
-    providerOPtions: {
+    providerOptions: {
       timeout: 30000, // ms
       clientConfig: {
         keepalive: true,

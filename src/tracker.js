@@ -49,10 +49,7 @@ function buyTrack(chain, marketContract) {
       try {
         const art = new ArtAction();
         const tokenID = event.returnValues.tokenId;
-        const data = {
-          contractAddress: nftContractAddress,
-          tokenId: tokenID,
-        };
+        const data = { contractAddress: nftContractAddress, tokenId: tokenID };
         const result = await art.UpdateBought(data);
         writeSuccessLog(nftContractAddress, tokenID, 'Buy', result);
       } catch (error) {
@@ -75,10 +72,7 @@ function cancelTrack(chain, marketContract) {
       try {
         const art = new ArtAction();
         const tokenID = event.returnValues.tokenId;
-        const data = {
-          contractAddress: nftContractAddress,
-          tokenId: tokenID,
-        };
+        const data = { contractAddress: nftContractAddress, tokenId: tokenID };
         const result = await art.UpdateCancel(data);
         writeSuccessLog(nftContractAddress, tokenID, 'Cancel', result);
       } catch (error) {
