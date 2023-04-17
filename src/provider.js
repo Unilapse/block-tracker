@@ -43,7 +43,21 @@ const chainEndpointMap = {
     },
   },
   bsc: {
-    endPoint: NETWORK === 'test' ? 'wss://testnet-dex.binance.org/api/ws' : 'wss://dex.binance.org/api/ws',
+    endPoint: NETWORK === 'test' ? `wss://ws-nd-057-809-208.p2pify.com/${process.env.ZSH_BSC_API_KEY}` : 'wss://dex.binance.org/api/ws',
+    marketContractAddress: NETWORK === 'test' ? '0x23db713F8539aB8B18AC4A14794e4Ea66469936B' : '0x',
+    providerOptions: {
+      timeout: 30000, // ms
+      clientConfig: {
+        keepalive: true,
+        keepaliveInterval: 60000, // ms
+      },
+      reconnect: {
+        auto: true,
+        delay: 5000, // ms
+        maxAttempts: 5,
+        onTimeout: false,
+      },
+    },
   },
 };
 

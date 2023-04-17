@@ -4,7 +4,7 @@ const { setWebsoketProvider, connectWebSocekt } = require('../src/provider');
 const { buyTrack, listingTrack, cancelTrack, blockTrack } = require('../src/tracker');
 
 //Make Provider & MarketContract by chain name
-const { provider, web3, marketContract } = setWebsoketProvider('klaytn');
+const { provider, web3, marketContract } = setWebsoketProvider('bsc');
 
 // connect to websocket
 connectWebSocekt(provider);
