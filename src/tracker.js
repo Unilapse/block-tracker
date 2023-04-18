@@ -30,11 +30,11 @@ function listingTrack(chain, marketContract) {
         const result = await art.UpdateListed(data);
         writeSuccessLog(nftContractAddress, tokenID, 'List', result);
       } catch (error) {
-        writeErrorLogUpdateDB(error);
+        writeErrorLogUpdateDB(error, chain);
       }
     })
     .on('error', (error) => {
-      writeErrorLogSubscribe(error);
+      writeErrorLogSubscribe(error, chain);
     });
 }
 
@@ -53,11 +53,11 @@ function buyTrack(chain, marketContract) {
         const result = await art.UpdateBought(data);
         writeSuccessLog(nftContractAddress, tokenID, 'Buy', result);
       } catch (error) {
-        writeErrorLogUpdateDB(error);
+        writeErrorLogUpdateDB(error, chain);
       }
     })
     .on('error', (error) => {
-      writeErrorLogSubscribe(error);
+      writeErrorLogSubscribe(error, chain);
     });
 }
 
@@ -76,11 +76,11 @@ function cancelTrack(chain, marketContract) {
         const result = await art.UpdateCancel(data);
         writeSuccessLog(nftContractAddress, tokenID, 'Cancel', result);
       } catch (error) {
-        writeErrorLogUpdateDB(error);
+        writeErrorLogUpdateDB(error, chain);
       }
     })
     .on('error', (error) => {
-      writeErrorLogSubscribe(error);
+      writeErrorLogSubscribe(error, chain);
     });
 }
 function blockTrack(web3) {

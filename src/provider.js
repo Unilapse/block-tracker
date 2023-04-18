@@ -70,9 +70,9 @@ function setWebsoketProvider(chain) {
   return { provider, web3, marketContract };
 }
 
-function connectWebSocekt(provider) {
+function connectWebSocekt(provider, chain) {
   provider.on('connect', () => {
-    console.log('Websocket connected.');
+    console.log(`Websocket connected : ${chain}`);
   });
 
   provider.on('close', (event) => {
@@ -81,7 +81,7 @@ function connectWebSocekt(provider) {
   });
 
   provider.on('error', (error) => {
-    writeErrorLogConnection(error);
+    writeErrorLogConnection(error, chain);
   });
 }
 

@@ -36,19 +36,19 @@ const LogMessage = {
   /**
    * Error Message
    */
-  mongoDbUpdateError: (error) => {
+  mongoDbUpdateError: (error, chain) => {
     const now = makeTime();
-    return `${now} // mongoDb update Error` + '\n' + error;
+    return `${now} // mongoDb update Error : ${chain}` + '\n' + error;
   },
 
-  subscribeError: (error) => {
+  subscribeError: (error, chain) => {
     const now = makeTime();
-    return `${now} // block event error` + '\n' + error;
+    return `${now} // block event error : ${chain}` + '\n' + error;
   },
 
-  connecntionError: (error) => {
+  connecntionError: (error, chain) => {
     const now = makeTime();
-    return `${now} // websocket connection error` + '\n' + error;
+    return `${now} // websocket connection error : ${chain}` + '\n' + error;
   },
 };
 

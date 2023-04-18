@@ -7,7 +7,7 @@ const { buyTrack, listingTrack, cancelTrack, blockTrack } = require('../src/trac
 const { provider, web3, marketContract } = setWebsoketProvider('polygon');
 
 // connect to websocket
-connectWebSocekt(provider);
+connectWebSocekt(provider, 'polygon');
 
 // get blocknumber
 blockTrack(web3);

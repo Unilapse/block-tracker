@@ -26,16 +26,16 @@ function writeSuccessLog(contractAddress, tokenId, state, { modifiedCount, match
     return;
   }
 }
-function writeErrorLogUpdateDB(error) {
-  writeLog(errorLogPath, LogMessage.mongoDbUpdateError(error));
+function writeErrorLogUpdateDB(error, chain) {
+  writeLog(errorLogPath, LogMessage.mongoDbUpdateError(error, chain));
 }
 
-function writeErrorLogSubscribe(error) {
-  writeLog(blockErrorLogPath, LogMessage.subscribeError(error));
+function writeErrorLogSubscribe(error, chain) {
+  writeLog(blockErrorLogPath, LogMessage.subscribeError(error, chain));
 }
 
-function writeErrorLogConnection(error) {
-  writeLog(connectionErrorLogPath, LogMessage.subscribeError(error));
+function writeErrorLogConnection(error, chain) {
+  writeLog(connectionErrorLogPath, LogMessage.connecntionError(error, chain));
 }
 
 module.exports = {
