@@ -5,7 +5,7 @@ const { writeSuccessLog, writeErrorLogUpdateDB, writeErrorLogSubscribe } = requi
 const chainEndpointMap = {
   klaytn: NftAddress.Klaytn,
   polygon: NftAddress.Polygon,
-  bsc: '',
+  bsc: NftAddress.Bsc,
 };
 
 function listingTrack(chain, marketContract) {
