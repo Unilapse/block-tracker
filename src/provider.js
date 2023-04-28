@@ -71,18 +71,23 @@ function setWebsoketProvider(chain) {
 }
 
 function connectWebSocekt(provider, chain) {
-  provider.on('connect', () => {
-    console.log(`Websocket connected : ${chain}`);
-  });
+  function connect() {
+    provider.on('connect', () => {
+      console.log(`Websocket connected : ${chain}`);
+    });
 
-  provider.on('close', (event) => {
-    console.log(event);
-    console.log('Websocket closed.');
-  });
+    provider.on('close', (event) => {
+      console.log(event);
+      console.log('Websocket closed. Reconnecting...');
+      writeErrorLogConnection(event, chain);
+      setTimeout(connect, 1000);
+    });
 
-  provider.on('error', (error) => {
-    writeErrorLogConnection(error, chain);
-  });
+    provider.on('error', (error) => {
+      writeErrorLogConnection(error, chain);
+    });
+  }
+  connect();
 }
 
 module.exports = { setWebsoketProvider, connectWebSocekt };
