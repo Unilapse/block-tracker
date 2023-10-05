@@ -9,10 +9,10 @@
   "author": "jumyeong lee",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.38.0",
+    "eslint": "^8.41.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "2.8.7"
+    "prettier": "^2.8.7"
   },
   "dependencies": {
     "mongoose": "^7.0.3",
